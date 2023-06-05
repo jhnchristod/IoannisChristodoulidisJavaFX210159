@@ -146,8 +146,55 @@ public class FormController {
                     //Bt00.setText(String.valueOf(letters.charAt(0)));
                 }
             });
+            
+     Object actionEvent =       new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                 ButtonClicked(event);
+                }
+     };
+     
+     Bt0.setOnAction(( EventHandler<ActionEvent>)actionEvent);
+     Bt1.setOnAction(( EventHandler<ActionEvent>)actionEvent);
+     Bt2.setOnAction(( EventHandler<ActionEvent>)actionEvent);
+     Bt3.setOnAction(( EventHandler<ActionEvent>)actionEvent);
+     Bt4.setOnAction(( EventHandler<ActionEvent>)actionEvent);
+     Bt3.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt4.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt5.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt6.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt7.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt8.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt9.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt10.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt11.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt12.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt13.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt14.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt15.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt16.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt17.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt18.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt19.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt20.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt21.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt22.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt23.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt24.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt25.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt26.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt27.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt28.setOnAction((EventHandler<ActionEvent>) actionEvent);
+    Bt29.setOnAction((EventHandler<ActionEvent>) actionEvent);
+
         }
     }
+    
+     private void ButtonClicked(ActionEvent event){
+        Button bt = (Button)   event.getSource();
+        bt.setText("?");
+        bt.setDisable(true);
+     }
     
       private Button getButtonFromGridPane(int btnIndex) {
           if(btnIndex == 0)
