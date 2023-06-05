@@ -68,8 +68,10 @@ public class FormController {
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
+                    String letters=RandomLetterGenerator.generateRandomLetters(30);
                     System.out.println(resources.getString("button.printed.message"));
-                    label.setText(resources.getString("button.printed.message").toString());
+                    //label.setText(resources.getString("button.printed.message").toString());
+                    label.setText(letters);
                     mygrid.add(label, 0, 0);
                 }
             });

@@ -41,7 +41,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?scenebuilder-preview-i18n-resource Bundle.properties?>
 
-<AnchorPane id="AnchorPane" focusTraversable="false" prefHeight="499.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="helloi18n.HelloI18NController">
+<AnchorPane id="AnchorPane" focusTraversable="false" prefHeight="499.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="IoannisChristodoulidisJavaFX210159.FormController">
   <children>
     <HBox id="HBox" alignment="CENTER" layoutX="101.0" layoutY="80.0" spacing="5.0" AnchorPane.leftAnchor="106.0">
       <children>
