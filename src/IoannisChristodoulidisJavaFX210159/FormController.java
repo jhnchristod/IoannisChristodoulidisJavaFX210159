@@ -53,8 +53,9 @@ public class FormController {
     @FXML //  fx:id="mylabel"
     private Label label;
     @FXML
-    private GridPane mygrid;
-            
+    private GridPane LetterGrid;
+     @FXML 
+    private Button Bt00;        
     
     
     /**
@@ -72,7 +73,11 @@ public class FormController {
                     System.out.println(resources.getString("button.printed.message"));
                     //label.setText(resources.getString("button.printed.message").toString());
                     label.setText(letters);
-                    mygrid.add(label, 0, 0);
+                    //LetterGrid.add(label, 0, 0);
+                    char firstchar=letters.charAt(0);
+                    String firstletter=String.valueOf(letters.charAt(0));
+                    System.out.println(firstletter);
+                    Bt00.setText(String.valueOf(letters.charAt(0)));
                 }
             });
         }
