@@ -9,7 +9,7 @@ import java.util.Random;
  * @author johnn
  */
 public class RandomLetterGenerator {
-     private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+     private static final String ALPHABET = "αβγδεζηθικλμνξοπρστυφχψω";
 
     public static String generateRandomLetters(int n) {
         Random rand = new Random();
