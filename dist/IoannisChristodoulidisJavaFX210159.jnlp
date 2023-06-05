@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="IoannisChristodoulidisJavaFX210159.jar" size="11399" download="eager" />
+    <jar href="IoannisChristodoulidisJavaFX210159.jar" size="13095" download="eager" />
   </resources>
 <security>
   <all-permissions/>

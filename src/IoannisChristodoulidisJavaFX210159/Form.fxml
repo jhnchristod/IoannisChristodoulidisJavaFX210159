@@ -66,7 +66,152 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="Bt00" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A">
+            <Button fx:id="Bt0" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt1" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt2" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt3" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt4" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt5" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt6" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt7" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt8" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt9" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt10" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt11" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt12" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt13" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt14" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt15" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt16" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt17" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt18" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt19" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt20" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt21" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="7">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt22" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt23" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt24" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt25" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt26" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt28" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt27" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.rowIndex="9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt29" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A" GridPane.columnIndex="2" GridPane.rowIndex="9">
                <font>
                   <Font size="14.0" />
                </font>
