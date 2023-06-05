@@ -55,6 +55,8 @@ public class FormController {
     private Label label;
     @FXML
     private GridPane LetterGrid;
+    @FXML
+    private GridPane WordsGrid;
     @FXML 
     private Button Bt0;        
     @FXML 
@@ -116,13 +118,16 @@ public class FormController {
     @FXML 
     private Button Bt29;        
     
-    
+    GameState State ;
     
     /**
      * Initializes the controller class.
      */
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
+        
+        State = new GameState();
+        
         assert button != null : "fx:id=\"button\" was not injected: check your FXML file 'HelloI18N.fxml'.";
         assert label !=null;
         if (button != null) {
@@ -192,8 +197,14 @@ public class FormController {
     
      private void ButtonClicked(ActionEvent event){
         Button bt = (Button)   event.getSource();
-        bt.setText("?");
-        bt.setDisable(true);
+        //bt.setText("?");
+        //bt.setDisable(true);
+         WordsGrid.add(bt, State.CurrentColumnIndex, State.CurrentRowIndex);
+         if (State.CurrentColumnIndex < ProjectSettings.MaxLettersPerWord)
+         State.IncreaseColumnIndex();
+         else{
+         //end of word forced
+         }
      }
     
       private Button getButtonFromGridPane(int btnIndex) {
