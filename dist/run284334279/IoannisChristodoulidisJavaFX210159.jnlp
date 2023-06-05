@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="IoannisChristodoulidisJavaFX210159.jnlp">
+  <information>
+    <title>IoannisChristodoulidisJavaFX210159</title>
+    <vendor>Oracle Corporation</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="IoannisChristodoulidisJavaFX210159.jar" size="10232" download="eager" />
+  </resources>
+<security>
+  <all-permissions/>
+</security>
+  <jfx:javafx-desc  width="800" height="600" main-class="IoannisChristodoulidisJavaFX210159.Main"  name="IoannisChristodoulidisJavaFX210159" />
+  <update check="always"/>
+</jnlp>
