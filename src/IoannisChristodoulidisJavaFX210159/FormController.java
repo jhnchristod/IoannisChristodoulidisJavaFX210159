@@ -41,6 +41,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.Node;
+import javafx.util.Pair;
 
 /**
  * Controller class of the HelloI18N sample.
@@ -199,12 +200,31 @@ public class FormController {
                 @Override
                 public void handle(ActionEvent event) {
                     //telos leksis
-                    if (State.CurrentColumnIndex != 0) {
-                        State.CurrentColumnIndex = 0;
-                        if (State.CurrentRowIndex < 15) {
-                            State.CurrentRowIndex++;
+                    if (State.CheckIfWordExists()) {
+                        if (State.CurrentColumnIndex != 0) {
+                            State.CurrentColumnIndex = 0;
+                            if (State.CurrentRowIndex < 15) {
+                                State.IncreaseRowIndex();
+                                State.ResetWordButton();
+                                State.CurrentColumnIndex = 0;
+                                State.LetterOriginCoords.clear();
+                            }
                         }
+                    } else {
+                        //h colona mexri tin opoa prepei na diabasoume
+                        //State.CurrentColumnIndex
+                        Integer index = 0;
+                        for (Pair<Integer, Integer> p : State.LetterOriginCoords) {
+                            Button bt = State.CurrentWordButtons.get(index);
+                            index++;
+                            LetterGrid.add(bt, p.getKey(), p.getValue());
+                        }
+                        State.ResetWordButton();
+                        State.CurrentColumnIndex = 0;
+                        State.LetterOriginCoords.clear();
+
                     }
+
                 }
             });
 
@@ -215,9 +235,19 @@ public class FormController {
         Button bt = (Button) event.getSource();
         //bt.setText("?");
         //bt.setDisable(true);
+        Integer cIdx = GridPane.getColumnIndex(bt);
+        if (cIdx == null) {
+            cIdx = 0;
+        }
+        Integer rIdx = GridPane.getRowIndex(bt);
+        if (rIdx == null) {
+            rIdx = 0;
+        }
+        State.LetterOriginCoords.add(new Pair<Integer, Integer>(cIdx, rIdx));
         WordsGrid.add(bt, State.CurrentColumnIndex, State.CurrentRowIndex);
+
         if (State.CurrentColumnIndex < ProjectSettings.MaxLettersPerWord) {
-            State.IncreaseColumnIndex();
+            State.IncreaseColumnIndex(bt);
         } else {
             //end of word forced
         }
@@ -236,7 +266,6 @@ public class FormController {
             }
         }
         return bt;
-
     }
 
 }
