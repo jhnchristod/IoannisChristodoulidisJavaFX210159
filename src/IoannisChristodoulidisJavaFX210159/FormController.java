@@ -199,9 +199,11 @@ public class FormController {
                 @Override
                 public void handle(ActionEvent event) {
                     //telos leksis
-                    State.CurrentColumnIndex = 0;
-                    if (State.CurrentRowIndex < 15) {
-                        State.CurrentRowIndex++;
+                    if (State.CurrentColumnIndex != 0) {
+                        State.CurrentColumnIndex = 0;
+                        if (State.CurrentRowIndex < 15) {
+                            State.CurrentRowIndex++;
+                        }
                     }
                 }
             });
