@@ -255,6 +255,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Button layoutX="456.0" layoutY="18.0" mnemonicParsing="false" text="Επόμενη Λέξη" />
+      <Button fx:id="BtnEndOfWord" layoutX="456.0" layoutY="18.0" mnemonicParsing="false" text="Επόμενη Λέξη" />
   </children>
 </AnchorPane>

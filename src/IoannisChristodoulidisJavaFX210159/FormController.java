@@ -33,6 +33,7 @@ package IoannisChristodoulidisJavaFX210159;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -40,6 +41,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.Node;
+
 /**
  * Controller class of the HelloI18N sample.
  */
@@ -57,221 +59,182 @@ public class FormController {
     private GridPane LetterGrid;
     @FXML
     private GridPane WordsGrid;
-    @FXML 
-    private Button Bt0;        
-    @FXML 
-    private Button Bt1;        
-    @FXML 
-    private Button Bt2;        
-    @FXML 
-    private Button Bt3;        
-    @FXML 
-    private Button Bt4;        
-    @FXML 
-    private Button Bt5;        
-    @FXML 
-    private Button Bt6;        
-    @FXML 
-    private Button Bt7;        
-    @FXML 
-    private Button Bt8;        
-    @FXML 
-    private Button Bt9;        
-    @FXML 
-    private Button Bt10;        
-    @FXML 
-    private Button Bt11;        
-    @FXML 
-    private Button Bt12;        
-    @FXML 
-    private Button Bt13;        
-    @FXML 
-    private Button Bt14;        
-    @FXML 
-    private Button Bt15;        
-    @FXML 
-    private Button Bt16;        
-    @FXML 
-    private Button Bt17;        
-    @FXML 
-    private Button Bt18;        
-    @FXML 
-    private Button Bt19;        
-    @FXML 
-    private Button Bt20;        
-    @FXML 
-    private Button Bt21;        
-    @FXML 
-    private Button Bt22;        
-    @FXML 
-    private Button Bt23;        
-    @FXML 
-    private Button Bt24;        
-    @FXML 
-    private Button Bt25;        
-    @FXML 
-    private Button Bt26;        
-    @FXML 
-    private Button Bt27;        
-    @FXML 
-    private Button Bt28;        
-    @FXML 
-    private Button Bt29;        
-    
-    GameState State ;
-    
+    @FXML
+    private Button Bt0;
+    @FXML
+    private Button Bt1;
+    @FXML
+    private Button Bt2;
+    @FXML
+    private Button Bt3;
+    @FXML
+    private Button Bt4;
+    @FXML
+    private Button Bt5;
+    @FXML
+    private Button Bt6;
+    @FXML
+    private Button Bt7;
+    @FXML
+    private Button Bt8;
+    @FXML
+    private Button Bt9;
+    @FXML
+    private Button Bt10;
+    @FXML
+    private Button Bt11;
+    @FXML
+    private Button Bt12;
+    @FXML
+    private Button Bt13;
+    @FXML
+    private Button Bt14;
+    @FXML
+    private Button Bt15;
+    @FXML
+    private Button Bt16;
+    @FXML
+    private Button Bt17;
+    @FXML
+    private Button Bt18;
+    @FXML
+    private Button Bt19;
+    @FXML
+    private Button Bt20;
+    @FXML
+    private Button Bt21;
+    @FXML
+    private Button Bt22;
+    @FXML
+    private Button Bt23;
+    @FXML
+    private Button Bt24;
+    @FXML
+    private Button Bt25;
+    @FXML
+    private Button Bt26;
+    @FXML
+    private Button Bt27;
+    @FXML
+    private Button Bt28;
+    @FXML
+    private Button Bt29;
+    @FXML
+    private Button BtnEndOfWord;
+
+    GameState State;
+
     /**
      * Initializes the controller class.
      */
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
-        
+
         State = new GameState();
-        
+
         assert button != null : "fx:id=\"button\" was not injected: check your FXML file 'HelloI18N.fxml'.";
-        assert label !=null;
+        assert label != null;
         if (button != null) {
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    String letters=RandomLetterGenerator.generateRandomLetters(ProjectSettings.CountOfLetters);
+                    String letters = RandomLetterGenerator.generateRandomLetters(ProjectSettings.CountOfLetters);
                     System.out.println(resources.getString("button.printed.message"));
                     //label.setText(resources.getString("button.printed.message").toString());
                     label.setText(letters);
                     //LetterGrid.add(label, 0, 0);
-                    for (int i=0; i<ProjectSettings.CountOfLetters; i++){
-                        char selectedchar=letters.charAt(i);
-                        Button bt =getButtonFromGridPane(i);
+                    for (int i = 0; i < ProjectSettings.CountOfLetters; i++) {
+                        char selectedchar = letters.charAt(i);
+                        Button bt = getButtonFromGridPane(i, LetterGrid);
                         bt.setText(String.valueOf(letters.charAt(i)));
                     }
-                    
-              
+
                     //String firstletter=String.valueOf(letters.charAt(0));
                     //System.out.println(firstletter);
                     //Bt00.setText(String.valueOf(letters.charAt(0)));
                 }
             });
-            
-     Object actionEvent =       new EventHandler<ActionEvent>() {
+
+            Object actionEvent = new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                 ButtonClicked(event);
+                    ButtonClicked(event);
                 }
-     };
-     
-     Bt0.setOnAction(( EventHandler<ActionEvent>)actionEvent);
-     Bt1.setOnAction(( EventHandler<ActionEvent>)actionEvent);
-     Bt2.setOnAction(( EventHandler<ActionEvent>)actionEvent);
-     Bt3.setOnAction(( EventHandler<ActionEvent>)actionEvent);
-     Bt4.setOnAction(( EventHandler<ActionEvent>)actionEvent);
-     Bt3.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt4.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt5.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt6.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt7.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt8.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt9.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt10.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt11.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt12.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt13.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt14.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt15.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt16.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt17.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt18.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt19.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt20.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt21.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt22.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt23.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt24.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt25.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt26.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt27.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt28.setOnAction((EventHandler<ActionEvent>) actionEvent);
-    Bt29.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            };
+
+            Bt0.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt1.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt2.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt3.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt4.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt3.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt4.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt5.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt6.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt7.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt8.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt9.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt10.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt11.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt12.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt13.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt14.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt15.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt16.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt17.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt18.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt19.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt20.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt21.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt22.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt23.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt24.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt25.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt26.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt27.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt28.setOnAction((EventHandler<ActionEvent>) actionEvent);
+            Bt29.setOnAction((EventHandler<ActionEvent>) actionEvent);
+
+            BtnEndOfWord.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    //telos leksis
+                    State.CurrentColumnIndex = 0;
+                    if (State.CurrentRowIndex < 15) {
+                        State.CurrentRowIndex++;
+                    }
+                }
+            });
 
         }
     }
-    
-     private void ButtonClicked(ActionEvent event){
-        Button bt = (Button)   event.getSource();
+
+    private void ButtonClicked(ActionEvent event) {
+        Button bt = (Button) event.getSource();
         //bt.setText("?");
         //bt.setDisable(true);
-         WordsGrid.add(bt, State.CurrentColumnIndex, State.CurrentRowIndex);
-         if (State.CurrentColumnIndex < ProjectSettings.MaxLettersPerWord)
-         State.IncreaseColumnIndex();
-         else{
-         //end of word forced
-         }
-     }
-    
-      private Button getButtonFromGridPane(int btnIndex) {
-          if(btnIndex == 0)
-              return Bt0;
-          else if (btnIndex == 1)
-              return Bt1;
-          else if (btnIndex == 2)
-              return Bt2;
-          else if (btnIndex == 3)
-              return Bt3;
-          else if (btnIndex == 4)
-              return Bt4;
-          else if (btnIndex == 5)
-              return Bt5;
-          else if (btnIndex == 6)
-              return Bt6;
-          else if (btnIndex == 7)
-              return Bt7;
-          else if (btnIndex == 8)
-              return Bt8;
-          else if (btnIndex == 9)
-              return Bt9;
-          else if (btnIndex == 10)
-              return Bt10;
-          else if (btnIndex == 11)
-              return Bt11;
-          else if (btnIndex == 12)
-              return Bt12;
-          else if (btnIndex == 13)
-              return Bt13;
-          else if (btnIndex == 14)
-              return Bt14;
-          else if (btnIndex == 15)
-              return Bt15;
-          else if (btnIndex == 16)
-              return Bt16;
-          else if (btnIndex == 17)
-              return Bt17;
-          else if (btnIndex == 18)
-              return Bt18;
-          else if (btnIndex == 19)
-              return Bt19;
-          else if (btnIndex == 20)
-              return Bt20;
-          else if (btnIndex == 21)
-              return Bt21;
-          else if (btnIndex == 22)
-              return Bt22;
-          else if (btnIndex == 23)
-              return Bt23;
-          else if (btnIndex == 24)
-              return Bt24;
-          else if (btnIndex == 25)
-              return Bt25;
-          else if (btnIndex == 26)
-              return Bt26;
-          else if (btnIndex == 27)
-              return Bt27;
-          else if (btnIndex == 28)
-              return Bt28;
-          else if (btnIndex == 29)
-              return Bt29;
-          else
-              return null;
-       
+        WordsGrid.add(bt, State.CurrentColumnIndex, State.CurrentRowIndex);
+        if (State.CurrentColumnIndex < ProjectSettings.MaxLettersPerWord) {
+            State.IncreaseColumnIndex();
+        } else {
+            //end of word forced
+        }
     }
-      
-   
+
+    private Button getButtonFromGridPane(int btnIndex, GridPane gridPane) {
+        Button bt = null;
+        String buttonPrefix = "Bt";
+        ObservableList<Node> children = gridPane.getChildren();
+        for (Node node : children) {
+            Button btemp = (Button) node;
+            String btid = btemp.getId();
+            if (btid.equals(buttonPrefix + Integer.toString(btnIndex))) {
+                bt = btemp;
+                break;
+            }
+        }
+        return bt;
+
+    }
+
 }
