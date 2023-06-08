@@ -43,19 +43,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.Node;
 import javafx.util.Pair;
 
-/**
- * Controller class of the HelloI18N sample.
- */
+
 public class FormController {
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
     @FXML //  fx:id="button"
-    private Button button; // Value injected by FXMLLoader
-    @FXML //  fx:id="mylabel"
-    private Label label;
+    private Button btNewGame; // Value injected by FXMLLoader
     @FXML
     private GridPane LetterGrid;
     @FXML
@@ -131,104 +125,96 @@ public class FormController {
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
 
+        LetterGrid.setVisible(false);
+        BtnEndOfWord.setVisible(false);
         State = new GameState();
 
-        assert button != null : "fx:id=\"button\" was not injected: check your FXML file 'HelloI18N.fxml'.";
-        assert label != null;
-        if (button != null) {
-            button.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    String letters = RandomLetterGenerator.generateRandomLetters(ProjectSettings.CountOfLetters);
-                    System.out.println(resources.getString("button.printed.message"));
-                    //label.setText(resources.getString("button.printed.message").toString());
-                    label.setText(letters);
-                    //LetterGrid.add(label, 0, 0);
-                    for (int i = 0; i < ProjectSettings.CountOfLetters; i++) {
-                        char selectedchar = letters.charAt(i);
-                        Button bt = getButtonFromGridPane(i, LetterGrid);
-                        bt.setText(String.valueOf(letters.charAt(i)));
-                    }
-
-                    //String firstletter=String.valueOf(letters.charAt(0));
-                    //System.out.println(firstletter);
-                    //Bt00.setText(String.valueOf(letters.charAt(0)));
+        btNewGame.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                String letters = RandomLetterGenerator.generateRandomLetters(ProjectSettings.CountOfLetters);
+                for (int i = 0; i < ProjectSettings.CountOfLetters; i++) {
+                    Button bt = getButtonFromGridPane(i, LetterGrid);
+                    bt.setText(String.valueOf(letters.charAt(i)));
                 }
-            });
+                LetterGrid.setVisible(true);
+                BtnEndOfWord.setVisible(true);
+                
+            }
+        });
 
-            Object actionEvent = new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    ButtonClicked(event);
-                }
-            };
+        Object actionEvent = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ButtonClicked(event);
+            }
+        };
 
-            Bt0.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt1.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt2.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt3.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt4.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt3.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt4.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt5.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt6.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt7.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt8.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt9.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt10.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt11.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt12.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt13.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt14.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt15.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt16.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt17.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt18.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt19.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt20.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt21.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt22.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt23.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt24.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt25.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt26.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt27.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt28.setOnAction((EventHandler<ActionEvent>) actionEvent);
-            Bt29.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt0.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt1.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt2.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt3.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt4.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt3.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt4.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt5.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt6.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt7.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt8.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt9.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt10.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt11.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt12.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt13.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt14.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt15.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt16.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt17.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt18.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt19.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt20.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt21.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt22.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt23.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt24.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt25.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt26.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt27.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt28.setOnAction((EventHandler<ActionEvent>) actionEvent);
+        Bt29.setOnAction((EventHandler<ActionEvent>) actionEvent);
 
-            BtnEndOfWord.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    //telos leksis
-                    if (State.CheckIfWordExists()) {
-                        if (State.CurrentColumnIndex != 0) {
-                            State.CurrentColumnIndex = 0;
-                            if (State.CurrentRowIndex < 15) {
-                                State.IncreaseRowIndex();
-                                State.ResetWordButton();
-                                State.CurrentColumnIndex = 0;
-                                State.LetterOriginCoords.clear();
-                            }
-                        }
-                    } else {
-                        //h colona mexri tin opoa prepei na diabasoume
-                        //State.CurrentColumnIndex
-                        Integer index = 0;
-                        for (Pair<Integer, Integer> p : State.LetterOriginCoords) {
-                            Button bt = State.CurrentWordButtons.get(index);
-                            index++;
-                            LetterGrid.add(bt, p.getKey(), p.getValue());
-                        }
-                        State.ResetWordButton();
+        BtnEndOfWord.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //telos leksis
+                if (State.CheckIfWordExists()) {
+                    if (State.CurrentColumnIndex != 0) {
                         State.CurrentColumnIndex = 0;
-                        State.LetterOriginCoords.clear();
-
+                        if (State.CurrentRowIndex < 15) {
+                            State.IncreaseRowIndex();
+                            State.ResetWordButton();
+                            State.CurrentColumnIndex = 0;
+                            State.LetterOriginCoords.clear();
+                        }
                     }
+                } else {
+                    //h colona mexri tin opoa prepei na diabasoume
+                    //State.CurrentColumnIndex
+                    Integer index = 0;
+                    for (Pair<Integer, Integer> p : State.LetterOriginCoords) {
+                        Button bt = State.CurrentWordButtons.get(index);
+                        index++;
+                        LetterGrid.add(bt, p.getKey(), p.getValue());
+                    }
+                    State.ResetWordButton();
+                    State.CurrentColumnIndex = 0;
+                    State.LetterOriginCoords.clear();
 
                 }
-            });
 
-        }
+            }
+        });
+
     }
 
     private void ButtonClicked(ActionEvent event) {

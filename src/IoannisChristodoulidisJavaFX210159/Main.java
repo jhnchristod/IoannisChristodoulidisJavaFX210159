@@ -54,14 +54,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // This line to resolve keys against Bundle.properties
-            ResourceBundle i18nBundle = ResourceBundle.getBundle("IoannisChristodoulidisJavaFX210159.Bundle", new Locale("en", "US"));
-            // This line to resolve keys against Bundle_fr_FR.properties
-//            ResourceBundle i18nBundle = ResourceBundle.getBundle("helloi18n.Bundle", new Locale("fr", "FR"));
-            AnchorPane page = (AnchorPane) FXMLLoader.load(Main.class.getResource("Form.fxml"), i18nBundle);
+            AnchorPane page = (AnchorPane) FXMLLoader.load(Main.class.getResource("Form.fxml"));
             Scene scene = new Scene(page);
             primaryStage.setScene(scene);
-            primaryStage.setTitle(i18nBundle.getString("application.title"));
+            primaryStage.setTitle("IoannisChristodoulidisJavaFX210159");
             primaryStage.show();
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
