@@ -6,6 +6,8 @@ package IoannisChristodoulidisJavaFX210159;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -26,7 +28,7 @@ public class GameState {
     public List<Button> CurrentWordButtons;
 
     public GameState() {
-        Dictionary = readFile("C:\\MyJavaProjects\\IoannisChristodoulidisJavaFX210159\\dic\\gr.txt");
+        Dictionary = readFile("gr.txt");
         CurrentRowIndex = 0;
         CurrentColumnIndex = 0;
         CurrentWord = "";
@@ -67,16 +69,20 @@ public class GameState {
         
     }
 
-    public static String[] readFile(String fileName) {
+    public String[] readFile(String fileName) {
+        InputStream is = this.getClass().getResourceAsStream(fileName);
         ArrayList<String> lines = new ArrayList<>(); // create an empty list to store the lines
-        try (Scanner scanner = new Scanner(new File(fileName))) { // create a scanner to read the file
+
+        try (Scanner scanner = new Scanner(is)) { // create a scanner to read the file
             while (scanner.hasNextLine()) { // loop until the end of the file
                 lines.add(scanner.nextLine()); // add each line to the list
             }
-        } catch (FileNotFoundException e) { // handle the exception if the file is not found
+        } catch (Exception e) { // handle the exception if the file is not found
             e.printStackTrace();
         }
-        return lines.toArray(new String[0]); // convert the list to an array and return it
+
+        return lines.toArray(
+                new String[0]); // convert the list to an array and return it
     }
 
 
